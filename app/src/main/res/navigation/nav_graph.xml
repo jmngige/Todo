@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.starsolns.todo.fragments.HomeFragment"
+        android:name="com.starsolns.todo.view.fragments.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.starsolns.todo.fragments.AddFragment"
+        android:name="com.starsolns.todo.view.fragments.AddFragment"
         android:label="Add task"
         tools:layout="@layout/fragment_add" >
         <action
@@ -38,11 +38,14 @@
     </fragment>
     <fragment
         android:id="@+id/updateFragment"
-        android:name="com.starsolns.todo.fragments.UpdateFragment"
+        android:name="com.starsolns.todo.view.fragments.UpdateFragment"
         android:label="Update task"
         tools:layout="@layout/fragment_update" >
         <action
             android:id="@+id/action_updateFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="todo_update"
+            app:argType="com.starsolns.todo.data.model.TodoData" />
     </fragment>
 </navigation>

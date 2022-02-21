@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="24dp"
-    tools:context=".fragments.AddFragment">
+    tools:context=".view.fragments.AddFragment">
 
 
     <EditText
         android:id="@+id/add_title"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/inputs_background"
         android:hint="Title"
         android:inputType="text"
@@ -29,7 +29,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/inputs_background"
         android:entries="@array/options"
-        android:paddingStart="20dp"
+        android:paddingStart="10dp"
         android:paddingEnd="20dp"
         app:layout_constraintEnd_toStartOf="@+id/add_guideline_2"
         app:layout_constraintStart_toStartOf="@+id/add_guideline_1"

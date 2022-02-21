@@ -15,22 +15,24 @@ abstract class TodoDatabase : RoomDatabase() {
     abstract fun todoDao(): TodoDao
 
     companion object {
-        private var instance: TodoDatabase? = null
+
+        @Volatile
+        private var INSTANCE: TodoDatabase? = null
 
         fun getDatabase(context: Context): TodoDatabase {
-            val tempInstance = instance
+            val tempInstance = INSTANCE
             if (tempInstance != null) {
                 return tempInstance
             }
 
             synchronized(this) {
-                val instanced = Room.databaseBuilder(
+                val instance = Room.databaseBuilder(
                     context.applicationContext,
                     TodoDatabase::class.java,
                     "todo_database"
                 ).build()
-                instance = instanced
-                return instance as TodoDatabase
+                INSTANCE = instance
+                return instance
             }
         }
     }

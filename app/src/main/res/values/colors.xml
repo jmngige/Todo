@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="high">#d50000</color>
-    <color name="medium">#9e9e9e</color>
+    <color name="medium">#FFEB3B</color>
     <color name="low">#00701a</color>
 
     <color name="statusBar">#00701a</color>
