@@ -12,7 +12,7 @@
         android:id="@+id/add_title"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/inputs_background"
         android:hint="Title"
         android:inputType="text"

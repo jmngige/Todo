@@ -69,4 +69,9 @@ class AddFragment : Fragment() {
             findNavController().navigate(R.id.action_addFragment_to_homeFragment)
         }
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

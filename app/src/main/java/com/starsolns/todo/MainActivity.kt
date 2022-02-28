@@ -8,6 +8,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.starsolns.todo.databinding.ActivityMainBinding
+import com.starsolns.todo.view.adapter.BindingAdapters
 
 class MainActivity : AppCompatActivity() {
 

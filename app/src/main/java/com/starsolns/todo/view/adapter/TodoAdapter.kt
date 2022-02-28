@@ -4,11 +4,14 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.starsolns.todo.R
 import com.starsolns.todo.data.model.Priority
@@ -18,7 +21,7 @@ import com.starsolns.todo.view.fragments.HomeFragmentDirections
 class TodoAdapter(private val ctx: Context) :
     RecyclerView.Adapter<TodoAdapter.ViewHolder>() {
 
-    private var todoList = emptyList<TodoData>()
+     var todoList = emptyList<TodoData>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -33,13 +36,13 @@ class TodoAdapter(private val ctx: Context) :
 
         when (currentItem.priority) {
             Priority.HIGH -> {
-                holder.cardOption.setCardBackgroundColor(ContextCompat.getColor(holder.itemView.context, R.color.high))
+                holder.cardOption.setBackgroundColor(ContextCompat.getColor(ctx, R.color.high))
             }
             Priority.MEDIUM -> {
-                holder.cardOption.setCardBackgroundColor(ContextCompat.getColor(holder.itemView.context, R.color.medium))
+                holder.cardOption.setBackgroundColor(ContextCompat.getColor(ctx, R.color.medium))
             }
             Priority.LOW -> {
-                holder.cardOption.setCardBackgroundColor(ContextCompat.getColor(holder.itemView.context, R.color.low))
+                holder.cardOption.setBackgroundColor(ContextCompat.getColor(ctx, R.color.low))
             }
         }
 
@@ -66,7 +69,11 @@ class TodoAdapter(private val ctx: Context) :
     }
 
     fun setData(dataList: List<TodoData>){
+//        val todoDiffUtil = TodoDiffUtil(todoList, dataList)
+//        val diffUtilResult = DiffUtil.calculateDiff(todoDiffUtil)
+//        diffUtilResult.dispatchUpdatesTo(this)
         this.todoList = dataList
         notifyDataSetChanged()
+
     }
 }
